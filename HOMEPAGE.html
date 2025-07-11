@@ -444,7 +444,7 @@
   event.preventDefault();
   const email = document.getElementById("emailInput").value;
   if (email) {
-    alert(Thanks for subscribing! A discount code has been sent to: ${email});
+    alert(`Thanks for subscribing! A discount code has been sent to: ${email}`);
     document.getElementById("emailInput").value = "";
   }
 }
