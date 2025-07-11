@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Products - Sunnies Studios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-position: center;
+      text-align: center;
+    }
+    .header-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 1rem;
+    }
+    .navbar {
+      display: flex;
+      gap: 0.6em;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .navbar a {
+      padding: 0.5em 1em;
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+      transition: all 0.3s ease;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    .center-logo {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+    }
+    .center-logo img {
+      width: 200px;
+      height: auto;
+    }
+    .right-icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      justify-content: center;
+    }
+    .right-icons a {
+      color: black;
+    }
+    .video-container video,
+    .video-hero video {
+      width: 100%;
+      max-height: 600px;
+      object-fit: cover;
+      display: block;
+    }
+    .video-hero {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .overlay-text h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .overlay-text p {
+      font-size: 1.2rem;
+    }
+    .card {
+      background-color: #e8e8e4;
+      text-align: center;
+    }
+    .card .price {
+      color: #b3a89b;
+      text-align: right;
+    }
+    .card button {
+      border: none;
+      outline: 0;
+      padding: 12px;
+      color: black;
+      background-color: white;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+    .card button:hover {
+      opacity: 0.7;
+    }
+    @media (max-width: 768px) {
+      .header-row {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .navbar, .right-icons {
+        justify-content: center;
+      }
+
+  .footer {
+    text-align: left;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .footer p,
+  .footer h6 {
+    font-family: 'Poppins', sans-serif;
+    margin: 0 0 1rem;
+  }
+
+  .footer form {
+    max-width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 2rem;
+  }
+
+  .footer input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    min-width: 200px;
+    flex: 1;
+  }
+
+.btn-red {
+  background-color: #cc2128;
+  color: white;
+  border: none;
+  padding: 0.3rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-red:hover {
+  background-color: #a91b20;
+}
+
+
+  .footerLinksContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    margin-top: 2rem;
+  }
+
+  .footerAboutValues {
+    min-width: 180px;
+  }
+
+  .footerAboutValues h6 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .footerAboutValues ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .footerAboutValues li {
+    margin-bottom: 0.4rem;
+    color: black;
+    font-weight: 400;
+  }
+
+  .footerAboutValues a:hover {
+    color: #cc2128;
+    text-decoration: none;
+  }
+
+  .footerTermsPrivacy {
+    margin-top: 2rem;
+    text-align: left;
+    justify-content: left;
+  }
+
+  .footerTermsPrivacy a {
+    text-decoration: none;
+    color: black;
+    margin-right: 1.5rem;
+  }
+
+  .footerTermsPrivacy p {
+    margin: 0;
+  }
+
+  .footerTermsPrivacy a:hover {
+    text-decoration: underline;
+    color: #cc2128;
+  }
+
+  @media (max-width: 768px) {
+    .footerLinksContainer {
+      gap: 30px;
+    }
+
+    .footer form {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer .btn-red {
+      width: 100%;
+    }
+  }
+
+  .footerBottom {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.footerBottom p {
+  margin: 0.2rem 0;
+}
+
+.footerBottom a {
+  text-decoration: none;
+  color: black;
+}
+
+.footerBottom a:hover {
+  text-decoration: underline;
+  color: #cc2128;
+}
+
+    }
+  </style>
+  <script>
+    function addToCart(id, name, price) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ id, name, price, quantity: 1 });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(${name} has been added to your cart.);
+    }
+  </script>
+</head>
+<body>
+  <div class="header-row">
+    <div class="navbar">
+      <a href="#Sun">Sun</a>
+      <a href="#Optical">Optical</a>
+      <a href="#Anti-Rad">Anti-Rad</a>
+      <a href="#Readers">Readers</a>
+    </div>
+    <div class="center-logo">
+      <a href="HOMEPAGE.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Sunnies_Studios_logo.png/1200px-Sunnies_Studios_logo.png?20201031004544" alt="Logo">
+      </a>
+    </div>
+    <div class="right-icons">
+      <a href="index.html"><i class="fas fa-user fa-lg"></i></a>
+      <a href="cart.html"><i class="fas fa-shopping-cart fa-lg"></i></a>
+    </div>
+  </div>
+  <hr>
+<br>
+  <div class="container">
+    <section id="Sun">
+      <div class="video-hero">
+  <video autoplay muted loop playsinline>
+    <source src="https://cdn.shopify.com/videos/c/o/v/673d5ea802c840d1a94b64ce6f33a024.mp4" type="video/mp4">
+  </video>
+</div>
+<br>
+<br>
+      <h2>Sun Collection</h2>
+      <p>Our full collection of sunglasses — equipped with lenses that block 100% of UV rays.</p>
+<br>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/InkFull_CeceFront.jpg?v=1750751852" class="card-img-top" alt="Cece - Sun">
+<div class="card-body">
+<h5 class="card-title">Cece</h5>
+<p class="price">P795</p>
+<p class="card-text">A slim rectangle frame.</p>
+<button onclick="addToCart(1, 'Cece', 795)">Add to Cart</button></div></div></div>
+
+        <div class="col"><div class="card"><img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/EspressoFull_MinaFrontcopy.jpg?v=1750930468" class="card-img-top" alt="Nora - Sun">
+<div class="card-body"><h5 class="card-title">Nora</h5>
+<p class="price">P795</p>
+<p class="card-text">A slim upswept cateye frame.</p>
+<button onclick="addToCart(3, 'Nora', 795)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/InkFull_NoraFront.jpg?v=1750917254" class="card-img-top" alt="Mina - Sun">
+<div class="card-body">
+<h5 class="card-title">Mina</h5><p class="price">P795</p>
+<p class="card-text">A retro-inspired round frame.</p>
+<button onclick="addToCart(2, 'Mina', 795)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/EspressoFull_JuneFront.jpg?v=1750411338" class="card-img-top" alt="June - Sun">
+<div class="card-body">
+<h5 class="card-title">June</h5>
+<p class="price">P795</p><p class="card-text">An upswept retro-inspired rectangular frame.</p>
+<button onclick="addToCart(4, 'June', 795)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/InkHickoryFull_HughFront.jpg?v=1750905822" class="card-img-top" alt="Hugh - Sun">
+<div class="card-body"><h5 class="card-title">Hugh</h5>
+<p class="price">P795</p>
+<p class="card-text">A chunky round frame with lightly tinted lenses.</p>
+<button onclick="addToCart(5, 'Hugh', 795)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/TerraPolarizedFull_SimoneFront.png?v=1746694444" class="card-img-top" alt="Simone - Sun"><div class="card-body">
+<h5 class="card-title">Simone</h5>
+<p class="price">P795</p>
+<p class="card-text">A slim rectangle wraparound frame.</p>
+<button onclick="addToCart(6, 'Simone', 795)">Add to Cart</button>
+</div></div></div>
+
+      </div>
+    </section>
+
+<hr>
+<br>
+
+  <div class="container">
+    <section id="Optical">
+  <div class="video-hero">
+  <video autoplay muted loop playsinline>
+    <source src="https://cdn.shopify.com/videos/c/o/v/04dd3a559be647debf8e85f86310fdda.mp4" type="video/mp4">
+  </video>
+</div>
+<br><br>
+      <h2>Optical Collection</h2>
+      <p>Choose from our collection of prescription eyewear with multi-coated lenses to accompany you wherever you go.</p>
+<br>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+ <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/CortadoFull_AstridFront.jpg?v=1739252765" class="card-img-top" alt="Astrid - Optical"><div class="card-body">
+<h5 class="card-title">Astrid</h5>
+<p class="price">P1995</p>
+<p class="card-text">A tubular pilot frame.</p>
+<button onclick="addToCart(12, 'Astrid', 1995)">Add to Cart</button>
+</div></div></div>
+
+
+        <div class="col"><div class="card"><img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/SoybeanFull_AlvaroFront.jpg?v=1749446286" class="card-img-top" alt="Alvaro - Optical">
+<div class="card-body">
+<h5 class="card-title">Alvaro</h5>
+<p class="price">P1995</p>
+<p class="card-text">A round frame (bio-acetate).</p>
+<button onclick="addToCart(8, 'Alvaro', 1995)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/SoybeanFull_SantiagoFront.jpg?v=1749446708" class="card-img-top" alt="Santiago - Optical">
+<div class="card-body">
+<h5 class="card-title">Santiago</h5><p class="price">P1995</p>
+<p class="card-text"> A retro-inspired round frame.</p>
+<button onclick="addToCart(9, 'Santiago', 1995)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/SoybeanFull_OctavioFront.jpg?v=1749104007" class="card-img-top" alt="Octavio - Optical">
+<div class="card-body">
+<h5 class="card-title">Octavio</h5>
+<p class="price">P1995</p><p class="card-text">A square pilot frame for a wide fit.</p>
+<button onclick="addToCart(10, 'Octavio', 1995)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/InkFull_LucyFront.jpg?v=1747725931" class="card-img-top" alt="Lucy - Optical">
+<div class="card-body"><h5 class="card-title">Lucy</h5>
+<p class="price">P1995</p>
+<p class="card-text">A slim rectangle frame with rounded edges.</p>
+<button onclick="addToCart(11, 'Hugh', 1995)">Add to Cart</button>
+</div></div></div>
+
+<div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/SoybeanFull_CatoFront.jpg?v=1749609570" class="card-img-top" alt="Cato - Optical">
+<div class="card-body">
+<h5 class="card-title">Cato</h5>
+<p class="price">P1995</p>
+<p class="card-text">A rounded rectangular frame with acetate.</p>
+<button onclick="addToCart(7, 'Cato', 1995s)">Add to Cart</button></div></div></div>
+ </div>
+</section>
+
+<hr>
+<br>
+
+  <div class="container">
+
+    <section id="Anti-Rad">
+<div class="video-hero">
+  <video autoplay muted loop playsinline>
+    <source src="https://cdn.shopify.com/videos/c/o/v/a4b23976f97b443e941da0e24984701f.mp4" type="video/mp4">
+  </video>
+</div>
+<br><br>
+      <h2>Anti-Rad Collection</h2>
+      <p>Designed to give blue light protection for your daily screen time. Now with photochromic lenses that darken under the sun.</p>
+<br>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+        <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/WalnutFull_LeiaFrontcopy.jpg?v=1749626762" class="card-img-top" alt="Leia - Anti-Rad">
+<div class="card-body">
+<h5 class="card-title">Leia</h5>
+<p class="price">P995</p>
+<p class="card-text">A slim cateye frame with prescription-free Anti-Rad lenses.</p>
+<button onclick="addToCart(13, 'Leia', 995)">Add to Cart</button></div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/DarkSmokeStormAdaptiveFull_HanFront1.png?v=1749626193" class="card-img-top" alt="Han - Anti-Rad">
+<div class="card-body"><h5 class="card-title">Han</h5>
+<p class="price">P1295</p>
+<p class="card-text">A slim rectangle frame with prescription-free Anti-Rad lenses.</p>
+<button onclick="addToCart(14, 'Han', 1295)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/ConchFull_FitzFront.jpg?v=1715581375" class="card-img-top" alt="Fitz - Anti-rad">
+<div class="card-body">
+<h5 class="card-title">Fitz</h5><p class="price">P995</p>
+<p class="card-text"> A round oversized pilot frame with prescription-free Anti-Rad lenses.</p>
+<button onclick="addToCart(15, 'Fitz', 995)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/RoseTaupeFull_SpencerFront_a5ad65ff-e328-445d-93ab-a6f582031398.jpg?v=1740645681" class="card-img-top" alt="Spencer - Anti-Rad">
+<div class="card-body">
+<h5 class="card-title">Spencer</h5>
+<p class="price">P995</p>
+<p class="card-text">A narrow rectangular frame with prescription-free Anti-Rad lenses.</p>
+<button onclick="addToCart(16, 'Spencer', 995)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/RoseTaupeFull_FranFront.jpg?v=1740641024" class="card-img-top" alt="Fran - Anti-rad">
+<div class="card-body">
+<h5 class="card-title">Fran</h5>
+<p class="price">P995</p>
+<p class="card-text">A classic cateye frame with prescription-free Anti-Rad lenses.</p>
+<button onclick="addToCart(17, 'Fran', 995)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/TanFull_PhoebeFront_300x.jpg?v=1699931928" class="card-img-top" alt="Phoebe - Anti-rad"><div class="card-body">
+<h5 class="card-title">Phoebe</h5>
+<p class="price">P1995</p>
+<p class="card-text">A slim cateye metal frame with prescription-free Anti-Rad lenses.</p>
+<button onclick="addToCart(18, 'Phoebe', 1995)">Add to Cart</button>
+</div></div></div>
+ </div>
+    </section>
+
+<hr>
+<br>
+
+  <div class="container">
+    <section id="Sun">
+      <div class="video-hero">
+  <video autoplay muted loop playsinline>
+    <source src="https://cdn.shopify.com/videos/c/o/v/d92f1f9bacad48e3aeae862581bf6adb.mp4" type="video/mp4">
+  </video>
+</div>
+<br><br>
+
+    <section id="Readers">
+      <h2>Readers Collection</h2>
+      <p>Our reading glasses are equipped with scratch-resistant lenses that give you clear vision at close range. Available in various lens powers from +1.00 to +3.00 diopters, the Readers collection is made up of ready-made frames that are responsibly-made with recycled polyester.</p>
+<br>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+        <div class="col"><div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0172/4383/2374/files/WalnutFull_LeiaFrontcopy.jpg?v=1749626762" class="card-img-top" alt="Finn - Readers">
+<div class="card-body">
+<h5 class="card-title">Finn</h5>
+<p class="price">P595</p>
+<p class="card-text"> A retro-inspired frame ready-made reading glasses equipped with scratch-resistant lenses that give you clear vision at close range.</p>
+<button onclick="addToCart(19, 'Finn', 595)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://ph.sunniesstudios.com/cdn/shop/files/SilverFull_Oval2Front.jpg?v=1734404362" class="card-img-top" alt="Readers Oval 2 - Readers">
+<div class="card-body"><h5 class="card-title">Readers Oval 2</h5>
+<p class="price">P695</p>
+<p class="card-text">A slim rectangle frame ready-made reading glasses equipped with scratch-resistant lenses that give you clear vision at close range.</p>
+<button onclick="addToCart(20 'Readers Oval 2', 695)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://ph.sunniesstudios.com/cdn/shop/files/SilverFull_Rectangle3Front.jpg?v=1734405171" class="card-img-top" alt="Readers Rectangle 2 - Readers">
+<div class="card-body">
+<h5 class="card-title">Readers Rectangle 2</h5><p class="price">P695</p>
+<p class="card-text"> A metal oval frame ready-made reading glasses equipped with scratch-resistant lenses that give you clear vision at close range.</p>
+<button onclick="addToCart(21, 'Readers Rectangle 2', 695)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://ph.sunniesstudios.com/cdn/shop/files/MushroomFull_Cateye1Front.jpg?v=1705892029" class="card-img-top" alt="Readers Cateye - Readers">
+<div class="card-body">
+<h5 class="card-title">Readers Cateye</h5>
+<p class="price">P595</p>
+<p class="card-text">A cateye frame ready-made reading glasses equipped with scratch-resistant lenses that give you clear vision at close range.</p>
+<button onclick="addToCart(22, 'Readers Cateye', 595)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://ph.sunniesstudios.com/cdn/shop/products/MushroomFull_Oval1Front.jpg?v=1677575101" class="card-img-top" alt="Readers Oval 1 - Readers">
+<div class="card-body">
+<h5 class="card-title">Readers Oval 1</h5>
+<p class="price">P476</p>
+<p class="card-text">A classic cateye frame ready-made reading glasses equipped with scratch-resistant lenses that give you clear vision at close range.</p>
+<button onclick="addToCart(23, 'Readers Oval 1', 476)">Add to Cart</button>
+</div></div></div>
+
+        <div class="col"><div class="card">
+<img src="https://ph.sunniesstudios.com/cdn/shop/products/SlateFull_Pilot1Front.jpg?v=1663057487" class="card-img-top" alt="Readers Pilot 1"><div class="card-body">
+<h5 class="card-title">Readers Pilot 1</h5>
+<p class="price">P476</p>
+<p class="card-text">A pilot-style frame ready-made reading glasses equipped with scratch-resistant lenses that give you clear vision at close range.</p>
+<button onclick="addToCart(24, 'Readers Pilot 1', 476)">Add to Cart</button>
+</div></div></div>
+ </div>
+    </section>
+
+  </div>
+
+ <hr><br>
+<div class="footer px-4">
+  <p>Good stuff, straight to your inbox. 10% off your first eyewear purchase when you enter your email.</p> 
+  <form onsubmit="subscribeEmail(event)" style="max-width: 400px; margin: 1em 0; display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start;">
+    <input type="email" id="emailInput" placeholder="Enter your email" required style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; min-width: 200px; width: auto;">
+    <button type="submit" class="btn-red">Subscribe</button>
+  </form>
+<br>
+  <div class="footerLinksContainer mt-4 d-flex flex-wrap gap-5">
+    <div class="footerAboutValues">
+      <h6><strong>Info</strong></h6>
+      <ul>
+        <li><a href="ABOUT SUNNIES STUDIOS.html#about">About Us as a Brand</a></li>
+        <li><a href="ABOUT SUNNIES STUDIOS.html#values">Our Core Values</a></li>
+      </ul>
+    </div>
+
+    <div class="footerAboutValues">
+      <h6><strong>Products</strong></h6>
+      <ul>
+        <li><a href="ProductService Page.html#Sun">Sun</a></li>
+        <li><a href="ProductService Page.html#Optical">Optical</a></li>
+        <li><a href="ProductService Page.html#Anti-Rad">Anti-Rad</a></li>
+        <li><a href="ProductService Page.html#Readers">Readers</a></li>
+      </ul>
+    </div>
+
+    <div class="footerAboutValues">
+      <h6><strong>Socials</strong></h6>
+      <ul>
+        <li><a href="https://www.instagram.com/sunniesstudios/#">Instagram</a></li>
+        <li><a href="https://www.facebook.com/SunniesStudios/">Facebook</a></li>
+        <li><a href="https://x.com/sunniesstudios">Twitter</a></li>
+        <li><a href="https://ph.pinterest.com/sunniesstudios/">Pinterest</a></li>
+        <li><a href="https://www.tiktok.com/@sunniesstudiosofficial?lang=en">TikTok</a></li>
+        <li><a href="https://www.linkedin.com/company/sunnies-studios">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footerTermsPrivacy mt-4">
+    <h6>© 2025, Sunnies Studios &nbsp;&nbsp;&nbsp;
+      <a href="https://sunniesstudios.com/policies/terms-of-service">Terms & Conditions</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="https://sunniesstudios.com/policies/privacy-policy">Privacy Policy</a>
+    </h6>
+  </div>
+</div>
+
+</body>
+</html>
